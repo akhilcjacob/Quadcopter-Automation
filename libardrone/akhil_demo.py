@@ -114,9 +114,6 @@ def objTrack(img,sq,string=True):
                 drone.move_forward()
                 time.sleep(t)
                 img.drawText("FORWARD", 0, 10, color=Color.GREEN) 
-            if(True):
-                drone.hover()
-                time.sleep(2*t)
     except Exception,e:
         drone.land()
         drone.halt()
