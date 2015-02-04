@@ -8,7 +8,7 @@
    
     numpy==1.7.1
   
-    SimpleCV
+    Latest version of SimpleCV
 
 #To Run:
   Run file 'akhil_demo.py'
