@@ -14,6 +14,8 @@
   Run file 'akhil_demo.py'
   (At the top there are a list of variables to change if needed.)
   
+        UPDATE FOR TRACKING CIRCLES
+  
 #contact:
       akhilcjacob@outlook.com
 
