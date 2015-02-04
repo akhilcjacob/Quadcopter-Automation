@@ -12,6 +12,7 @@ stringOrNot=False
 #true-for string only false-for string and actual drone movement
 t=0 #time variable that controls how long the drone should move in each direction
 #keep 0 unless drone doesn’t move enough.
+circleObject=False #if square object to be tracked keep false else if circle obj make true
 import pygame
 import pygame.surfarray
 import pygame.transform
@@ -42,16 +43,19 @@ def main():
             img.drawRectangle(x,y,w,h,(0, 255, 0), 0, alpha=120)
             img.drawText( (str(drone.navdata.get(0, dict()).get('battery', 0))+ '% Battery'), 0, 200, color=Color.BLUE) 
             if blobs:
-                squares = blobs.filter([b.isSquare(tolerance,ratTolerence) for b in blobs])
-                if squares:
-                    if squares[-1].height()>minWid:
-                        img.drawCircle((squares[-1].x,squares[-1].y),squares[-1].height()/2,SimpleCV.Color.BLUE,3)
+                if circleObject:
+                    objects=blobs.filter([b.isCircle(tolerance,ratTolerence) for b in blobs])
+                else:
+                    objects= blobs.filter([b.isSquare(tolerance,ratTolerence) for b in blobs])
+                if objects:
+                    if objects[-1].height()>minWid:
+                        img.drawCircle((objects[-1].x,objects[-1].y),objects[-1].height()/2,SimpleCV.Color.BLUE,3)
                         objTrack(img,squares,stringOrNot)
-                        img.drawText(str(squares[-1].height()), 0, 140, color=Color.BLUE)
+                        img.drawText(str(objects[-1].height()), 0, 140, color=Color.BLUE)
                 else:    
                     if not stringOrNot:
                         drone.hover()
-                        img.drawText("SPin", 0, 140, color=Color.BLUE) 
+                        img.drawText("SPIN", 0, 140, color=Color.BLUE) 
                     else: 
                         img.drawText("SPIN", 0, 140, color=Color.BLUE) 
             normaldisplay=True
