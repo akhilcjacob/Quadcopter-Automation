@@ -50,7 +50,7 @@ def main():
                 if objects:
                     if objects[-1].height()>minWid:
                         img.drawCircle((objects[-1].x,objects[-1].y),objects[-1].height()/2,SimpleCV.Color.BLUE,3)
-                        objTrack(img,squares,stringOrNot)
+                        objTrack(img,objects,stringOrNot)
                         img.drawText(str(objects[-1].height()), 0, 140, color=Color.BLUE)
                 else:    
                     if not stringOrNot:
