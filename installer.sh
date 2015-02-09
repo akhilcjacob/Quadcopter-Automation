@@ -7,4 +7,10 @@ cd SimpleCV/scripts/install/ubuntu
 ./opencv-install.sh
 ./opencv2_4_2_install.sh
 ./simplecv-install.sh
+cd ../../..
+rm -rf SimpleCV
+git clone https://github.com/akhilcjacob/pydrone-squaretracker.git
+cd python-squaretracker
+sudo pip install -r requirements.txt
+
 
