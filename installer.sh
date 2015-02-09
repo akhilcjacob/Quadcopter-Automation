@@ -14,5 +14,8 @@ cd ~
 git clone https://github.com/akhilcjacob/python-ardrone-squareTracker.git
 cd python-ardrone-squareTracker
 sudo pip install -r requirements.txt
-
-
+https://github.com/FFmpeg/ffmpeg.git
+cd ffmpeg
+./configure
+make 
+make install
