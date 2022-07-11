@@ -1,4 +1,4 @@
-# libardronesquaretracker
+# libardrone squ aretracker
 
 #Requirements:
 (just run installer)
