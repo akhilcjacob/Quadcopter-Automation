@@ -1,4 +1,4 @@
-# ibardrone square tracker
+# Libardrone square tracker
 
 #Requirements:
 (just run installer)
